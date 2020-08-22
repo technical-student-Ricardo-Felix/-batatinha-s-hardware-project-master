@@ -1,0 +1,384 @@
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border-style: none;  
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+    font: 400 15px Roboto, sans-serif;
+}
+
+html{height: 100%; }
+
+
+body:not(#LeftSideMenu){
+    height: 100%;
+    background-color: white; 
+    background-image: url(./assets/home_img/auxiliar4.png);
+    background-attachment: fixed;
+}
+
+header{
+    height: 176px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image:url(./assets/home_img/logo_roxo_final.png), url(./assets/home_img/head_sem_logo_.png);
+    background-size: 170px, cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color:#223330;
+
+}
+.tela_pc{
+    width: 350px;
+    height: 260px;
+    overflow: hidden;
+    border: 25px inset black;
+    margin-top: 100px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.tela_pc:nth-child(1){
+    transform: rotateY(55deg);
+    transform-origin:right;
+    border-color:rgba(0,0,0,0.7);
+    width: 200px;
+    align-items: center;
+}
+
+.tela_pc:nth-child(2){
+    width: 560px;
+    justify-content: center;
+    align-items: center;
+}
+
+.tela_pc:nth-child(1) a{
+    justify-content: center;
+    align-items: center;
+}
+
+
+.tela_pc:nth-child(2) a{
+    justify-content: center;
+    align-items: center;
+}
+
+.tela_pc:nth-child(3){
+    transform: rotateY(-55deg);
+    transform-origin:left;
+    border-color:rgba(0,0,0,0.7);
+     width: 200px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.tela_pc:nth-child(3) a{
+    justify-content: center;
+    align-items: center;
+}
+
+.tela_pc a{
+    position: absolute;
+    display: flex;
+    align-items: center;
+}
+
+
+.tela_pc img{
+    height: 210px;
+    position: absolute;
+    opacity: 0;
+}
+
+.tela_pc:nth-child(1) img,.tela_pc:nth-child(3) img {
+    height: 130px;
+}
+
+.slide1,.slide2,.slide3{transform: translateX(-500px);}
+
+
+.slide1.most,.slide2.most,.slide3.most{
+    transform: translateX(0px);
+    opacity: 1;
+    transition: all 2s;
+}
+
+.slide1.past,.slide2.past,.slide3.past{
+    transform: translateX(500px);
+    opacity: 0;
+    transition: all 2s;
+
+}
+
+
+.tela_pc img:hover{
+ transform: scale(1.04);
+}
+
+.slideshow-images{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    perspective: 900px;
+}
+
+.legend{
+    width: 100%; 
+    display: flex; 
+    justify-content: center;
+    margin-top: 20px;
+    
+}
+#lg-background{
+    background: black;
+    padding: 7px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    border-radius: 100% 100% 0 0; 
+}
+#sobre{
+    width: 80%;
+    border: 1px solid black;
+    background: white;
+    margin: auto;
+    margin-top: 200px;
+    padding: 5px;
+
+}
+
+#sobre p{margin-left: 5px; margin-right: 5px; margin-top: 5px;}
+
+#sobre h1{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+    border-bottom: 1px solid black;
+    padding: 5px;
+}
+
+.dotted{
+    background: white;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    margin:0px 5px;
+    cursor: pointer;
+}
+
+.dotted.active{background: grey;}
+
+
+header img{
+    width: auto;
+    height: 150px;
+}
+
+/* Menu CSS */
+#check,#btn{ display: none; }
+
+#menu{
+    width:100%;
+    display: flex; 
+    background-color: #293d3e;
+    justify-content: center;
+}
+
+nav, nav a{ 
+    background:#293d3e;
+}
+
+
+li{
+    height: 100%;
+    float: left;
+    margin: 15px;
+}
+
+li a{
+    text-decoration: none;
+    padding: 15px;
+    font-family: sans-serif;
+    color:#edf5c2;
+    font-size: 12pt;
+}
+
+a:hover{ background: rgba(225,225,225,0.3); }
+
+.fixo{
+    top:0px;
+    z-index: 5;
+    position: fixed;
+}
+
+.drop{
+    top: 32px;
+    left: 0px;
+    z-index: 1;
+    display: none;
+    text-align: left;
+    position: absolute;
+
+}
+
+
+
+#conteudo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.drop p { width: 100%; }
+
+.drop p a{ width: 120px; }
+
+.drop a{ display: inline-block; }
+
+.dropdown{ position: relative; }
+
+.dropdown:hover .drop{ display: inline-flex; }
+
+@media (max-width:700px){
+   nav ul{
+        margin-left: 0px;
+        display: none;
+    }
+    
+    li{ clear: both; }
+    
+
+    
+    #btn{ display: block; }
+    
+    #check:checked ~ #menu ul{ display: block; }
+    
+    #menu{ text-align: left; }
+    
+    
+    .tela_pc{
+    height: 230px;
+ 
+}
+
+.tela_pc:nth-child(1){
+
+    width: 200px;
+}
+
+.tela_pc:nth-child(2){
+    width: 260px;
+}
+
+.tela_pc:nth-child(3){
+     width: 200px;
+
+ }
+   
+
+.tela_pc:nth-child(2) img{
+    height: 180px;
+}
+    
+    
+    
+  
+}
+
+@media(max-width:600px){
+    .tela_pc{
+    height: 200px;
+ 
+}
+
+.tela_pc:nth-child(1){
+
+    width: 160px;
+}
+
+.tela_pc:nth-child(2){
+    width: 260px;
+}
+
+.tela_pc:nth-child(3){
+     width: 160px;
+
+ }
+    
+   .tela_pc:nth-child(2) img{
+    height: 150px;
+  }
+    
+    .tela_pc:nth-child(1) img{
+    height: 100px;
+  }
+    .tela_pc:nth-child(3) img{
+    height: 100px;
+  }
+}
+.svg-icon {
+  width: 3em;
+  height: 2em;
+  cursor: pointer;
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  fill: white;
+}
+
+.svg-icon circle { stroke: white; }
+
+a:active, a { color: black; }
+
+/* Left menu */
+.leftmenu {
+    width: auto;
+    height: 100%;
+    max-width: 200px;
+    margin: 5px 5px;
+    overflow: hidden;
+    position: relative;
+    background-color: white;
+    color:#edf5c2;
+}
+
+.categorias-titulo {
+    width: auto;
+    background-color: #293d3e;
+    margin: 10px 5px 0px 0px;
+    border-radius: 0px 50px 50px 0px;
+}
+
+.leftmenu p:not(.categorias-titulo) { 
+    padding: 0px 10px; 
+    margin: 5px 0px;  
+}
+
+.leftmenu a:hover { color: red; }
+
+.leftmenu{
+    border: 1px solid rgba(87, 87, 87, 0.945);
+    border-radius: 5px;
+}
+
+footer{
+    background:#223330;
+    width: 100%;
+    height: 50px;
+    margin-top:100px;
+    color: white;
+    font-size: 12px;
+    line-height: 50px;
+}
